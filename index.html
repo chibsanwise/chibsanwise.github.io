@@ -1,13 +1,4 @@
-<?php
-include'conn.php'
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-?>
-<!DOCTYPE html>
-<html>
+
 <head>
  <meta charset="utf-8" />
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -78,19 +69,7 @@ include'conn.php'
                          <div class="carousel-item active">
                       <img src="pics/931 logo.png" alt="lifting" style="height: 500px">
                       </div>
-                       <?php
-$query = "Select c.url, c.alt FROM `carpics` c ";
-$result = mysqli_query($con, $query);
-while($row = mysqli_fetch_array($result)){
-$url = $row['url'];
-$alt = $row['alt'];
-                     echo" <div class='carousel-item'>
-                        <img src='$url' alt='$alt' style='height:500px'>
-                      </div>";
-                      
-                              
-}
-                              ?>
+                     
                     </div>
                   
                     <a class="carousel-control-prev" href="#demo" data-slide="prev">
@@ -107,17 +86,7 @@ $alt = $row['alt'];
 
   <div class="row">
     <div class="col text-center">
-        <?php                include 'conn.php';
-        $nquery = "SELECT f.url, f.alt FROM `frontpic` f WHERE f.idfrontpic = (SELECT MAX(f.idfrontpic) FROM frontpic)";
-$nresult = mysqli_query($con, $nquery);
-while($nrow = mysqli_fetch_array($nresult)){
-    $nurl = $nrow['url'];
-    $nalt = $nrow['alt'];
-    echo "<img src='$nurl' alt='$nalt'>";
-
-}
-
-?><br>
+        <br>
 <a href='Robopage.php'><button class="btn">Meet the Robots!</button></a>
 
 <a href='teammembers.php'><button class="btn">Meet the Team!</button></a>
